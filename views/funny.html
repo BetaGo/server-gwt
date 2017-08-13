@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FUNNY</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .root {
+      position: relative;
+    }
+
+    .banner {
+      position: relative;
+    }
+
+    .banner-title {
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      padding: 0;
+      text-align: center;
+      font-size: 80px;
+      font-weight: bold;
+      transform: translateX(-50%);
+      color: #eee;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: space-around,
+    }
+
+    .card {
+      flex: 1;
+      box-sizing: border-box;
+      padding: 2em;
+      min-width: 320px;
+    }
+    .card-container>div:nth-of-type(2n) {
+      background: #000;
+      color: #eee;
+    }
+  </style>
+</head>
+<body class="root">
+  <div class="banner">
+    <img src="/images/funny-banner.jpg" alt="banner">
+    <h1 class="banner-title">MY WORK</h1>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <h2>Shop</h2>
+      <p>一个用React、Redux、Material UI搭配node、mongodb构建的一个小商城。</p>
+      <p>线上地址：<a href="http://shop.gouwantong.com">ReactShop(请用手机端浏览,获取最佳体验)</a></p>
+      <p>源码：<a href="https://github.com/GoWantong/React-Shop">https://github.com/GoWantong/React-Shop</a></p>
+    </div>
+    <div class="card">
+      <h2>Ninja</h2>
+      <p>一个用canvas写的小游戏</p>
+      <p>线上地址：<a href="http://www.gouwantong.com/games/ninja">Ninja(请用手机端浏览)</a></p>
+      <p>源码：<a href="https://github.com/GoWantong/game-ninja">https://github.com/GoWantong/game-ninja</a></p>
+    </div>
+    <div class="card">
+      <h2>2048</h2>
+      <p>用JavaScript、CSS、HTML写的一个2048游戏</p>
+      <p>一个用canvas写的小游戏</p>
+      <p>线上地址：<a href="http://www.gouwantong.com/games/2048">2048</a></p>
+      <p>源码：<a href="https://github.com/GoWantong/game-2048">https://github.com/GoWantong/game-2048</a></p>
+    </div>
+  </div>
+  <footer>
+
+  </footer>
+</body>
+</html>
