@@ -1,17 +1,47 @@
 {
-  "name": "server-gwt",
-  "version": "0.0.0",
-  "private": true,
+  "name": "gouwantong.com",
+  "version": "0.0.1",
+  "description": "node server for gouwantong.com",
+  "main": "index.js",
+  "author": "gouwantong@live.com",
+  "license": "MIT",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "npm run serve",
+    "build": "npm run build-ts && npm run tslint && npm run copy-static-assets",
+    "serve": "node dist/server.js",
+    "watch-node": "nodemon dist/server.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "test": "jest --forceExit --coverage --verbose",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "copy-static-assets": "ts-node copyStaticAssets.ts",
+    "debug": "npm run build && npm run watch-debug",
+    "serve-debug": "nodemon --inspect dist/server.js",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
   },
   "dependencies": {
-    "body-parser": "~1.17.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "ejs": "~2.5.6",
-    "express": "~4.15.2",
-    "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2"
+    "dotenv": "^5.0.0",
+    "koa": "^2.5.0",
+    "koa-body": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.1",
+    "koa-static": "^4.0.2",
+    "mongoose": "^5.0.6"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^4.0.2",
+    "@types/koa": "^2.0.44",
+    "@types/koa-router": "^7.0.27",
+    "@types/koa-session": "^5.7.1",
+    "@types/koa-static": "^4.0.0",
+    "@types/mongoose": "^5.0.2",
+    "@types/shelljs": "^0.7.8",
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.15.0",
+    "shelljs": "^0.8.1",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
   }
 }
