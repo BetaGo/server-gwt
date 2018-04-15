@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Router = require("koa-router");
-const koaBody = require("koa-body");
+const koaBody = require("koa-bodyparser");
 const Post_1 = require("../models/Post");
 const router = new Router({ prefix: "/post" });
 router
